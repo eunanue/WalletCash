@@ -1,0 +1,140 @@
+# =========================
+# .NET / ASP.NET Core
+# =========================
+
+# Build
+[Bb]in/
+[Oo]bj/
+out/
+publish/
+artifacts/
+
+# User-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio
+.vs/
+
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# =========================
+# Configuration / Secrets
+# =========================
+
+# Local environment configuration
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.local.json
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# User Secrets / local secrets
+secrets.json
+
+# =========================
+# Logs
+# =========================
+
+*.log
+logs/
+Logs/
+
+# =========================
+# Test / Coverage
+# =========================
+
+TestResults/
+coverage/
+coverage.*
+*.coverage
+*.coveragexml
+
+# =========================
+# NuGet
+# =========================
+
+*.nupkg
+*.snupkg
+packages/
+
+# NuGet generated files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# =========================
+# Database / EF Core
+# =========================
+
+# Local databases
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# IMPORTANTE:
+# NO ignorar Migrations/ si utilizas EF Core.
+# Las migraciones normalmente deben estar en Git.
+
+# =========================
+# OS
+# =========================
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# =========================
+# Temporary files
+# =========================
+
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# =========================
+# Publish / Deployment
+# =========================
+
+*.pubxml.user
+
+# =========================
+# Certificates / Keys
+# =========================
+
+*.pfx
+*.p12
+*.key
+*.pem
+
+# =========================
+# Docker local overrides
+# =========================
+
+docker-compose.override.yml
