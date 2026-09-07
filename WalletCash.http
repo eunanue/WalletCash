@@ -1,6 +1,86 @@
 @WalletCash_HostAddress = http://localhost:5069
 
-GET {{WalletCash_HostAddress}}/weatherforecast/
+POST {{WalletCash_HostAddress}}/v2/cashout/references
+Content-Type: application/json
+
+{
+  "amount": 100.0,
+  "expiration_minutes": 60,
+  "name": "User name",
+  "email": "user@mail.com",
+  "phone": "1234567890",
+  "custom_data": "Mifolio"
+}
+
+###
+
+GET {{WalletCash_HostAddress}}/v2/cashout/references/21004040000000000090
+Accept: application/json
+
+###
+
+POST {{WalletCash_HostAddress}}/v2/cashout/notifications
+Content-Type: application/json
+
+{
+  "id": "2c2725ca-eada-426a-b928-8bb851128059",
+  "reference": "20004042284511626341",
+  "amount": 100.0,
+  "fee": 10.0,
+  "total": 110.0,
+  "currency": "MXN",
+  "merchant": "Farmacias del Ahorro",
+  "date": "2020-11-04T18:13:46.613399-06:00",
+  "refunded": false,
+  "custom_data": "Mifolio",
+  "security": {
+    "key": "2c2725caeada426ab9288bb851128059",
+    "version": 1,
+    "signature": "L1Xb1RFcDjai0QB7ZZT0+iQC4VyIoF861FBFPlU4z2PEhwkUa1YYGIbHqSk5kyXzReimDkwedhbSldBKAJFrUlGb6mhepGszb4hCNLTcPnKwZIT+vQWOQmx6aXjIHE27qQe537NNfODWF26RBgCDonQQjHKfaUrKYWaCy/kT2bWh4uIedaInmEfuEf9/rnPVY8pJXHAkkFSXIwb8f2+PdNyciJACb5TAYiTRortXNKpAteeo9SFiW83o7I4FKlfpaFf+R37piyRrdS6/McnOLOHYx6pQVzuVOeyJZ1ea0m0FD2kRf/wPAGazqT7ix47mO206IEt5+tHIxHPgBKoRbQ=="
+  }
+}
+
+###
+
+DELETE {{WalletCash_HostAddress}}/v2/cashout/references/21004040000000000090
+Accept: application/json
+
+###
+
+POST {{WalletCash_HostAddress}}/v2/cashout/webhooks
+Content-Type: application/json
+
+{
+  "url": "https://webhook.test.com"
+}
+
+###
+
+PUT {{WalletCash_HostAddress}}/v2/cashout/webhooks/7f684262-a676-482c-9366-c253093cc68c
+Content-Type: application/json
+
+{
+  "url": "https://webhook.test2.com"
+}
+
+###
+
+GET {{WalletCash_HostAddress}}/v2/cashout/webhooks
+Accept: application/json
+
+###
+
+GET {{WalletCash_HostAddress}}/v2/cashout?page=1&limit=10
+Accept: application/json
+
+###
+
+GET {{WalletCash_HostAddress}}/v2/stores?latitude=19.4326&longitude=-99.1332&radius=5
+Accept: application/json
+
+###
+
+GET {{WalletCash_HostAddress}}/v2/stores/65fcfd79-071a-4f42-9abd-7bd4d2c7a935
 Accept: application/json
 
 ###
